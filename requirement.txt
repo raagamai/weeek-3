@@ -282,4 +282,24 @@ git am 0001-Updated-README.patch
 git add .
 git commit -m "Updated project"
 git push origin main
+pipeline {
+    agent any
 
+    stages {
+        stage('build') {
+            steps {
+                echo 'build successfull'
+            }
+        }
+        stage('test') {
+            steps {
+                echo 'test successfull'
+            }
+        }
+        stage('deploy') {
+            steps {
+                echo 'deploy successfull'
+            }
+        }
+    }
+}
